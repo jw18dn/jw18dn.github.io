@@ -174,8 +174,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-filter: invert(0.5);
-          filter: invert(0.5);
+  -webkit-filter: invert(0);
+          filter: invert(0);
   z-index: 2;
 }
 
