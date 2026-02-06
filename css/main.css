@@ -170,7 +170,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  width: 200px;
+  width: 260px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
