@@ -199,7 +199,7 @@ body {
   .container {
     padding: 2rem 2rem 6rem;
     background-size: calc(8.75rem + 2.5vw), calc(11.25rem + 3.25vw);
-    background-position: bottom 12rem left 2rem, bottom 12rem right 2rem;
+    background-position: bottom 8rem left 2rem, bottom 8rem right 2rem;
     height: auto;
     min-height: 100vh;
     overflow: auto;
