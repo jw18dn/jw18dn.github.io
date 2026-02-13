@@ -22,9 +22,9 @@ body {
 }
 
 .container {
-  background: url("../img/Cassie.svg"), url("../img/vision60.svg");
+  background: url("../img/Cassie.svg"), url("../img/vision60_2.svg");
   background-repeat: no-repeat, no-repeat;
-  background-position: bottom left, bottom right;
+  background-position: bottom 2rem right 2rem, bottom 2rem right 2rem;
   background-size: 35rem, 35rem;
   position: relative;
   width: 100vw;
@@ -198,7 +198,7 @@ body {
 @media screen and (max-width: 820px) {
   .container {
     padding: 2rem 2rem 8rem;
-    background-size: calc(25rem + 20vw), calc(25rem + 20vw);
+    background-size: calc(25rem + 20vw), calc(12rem + 10vw);
   }
 
   .container header img {
