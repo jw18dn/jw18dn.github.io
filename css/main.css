@@ -246,13 +246,14 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     position: absolute;
-    bottom: 2rem;
+    bottom: 0.5rem;
     left: 0;
     right: 0;
   }
   .container footer .social {
     -webkit-filter: invert(0);
             filter: invert(0);
+    width: 220px;
   }
   .container footer .social a img {
     height: 3.5rem;
