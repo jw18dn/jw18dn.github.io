@@ -40,7 +40,7 @@
 .pub-list li {
   margin-bottom: 2rem;
   padding-left: 1.5rem;
-  border-left: 3px solid #005a00;
+  border-left: 3px solid #8FC7F3;
   font-size: 1.4rem;
   line-height: 1.8;
 }
@@ -50,7 +50,7 @@
 }
 
 .pub-authors strong {
-  color: #005a00;
+  color: #8FC7F3;
 }
 
 .pub-title {
@@ -67,7 +67,7 @@
 }
 
 .pub-links a {
-  color: #005a00;
+  color: #8FC7F3;
   font-weight: 700;
   transition: color 300ms;
 }
