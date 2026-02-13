@@ -24,7 +24,7 @@ body {
 .container {
   background: url("../img/drone.svg"), url("../img/Cassie.svg"), url("../img/vision60_2.svg");
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: top 2rem right 2rem, bottom 2rem left 2rem, bottom 2rem right 2rem;
+  background-position: top 5rem right 5rem, bottom 2rem left 2rem, bottom 2rem right 2rem;
   background-size: 35rem, 35rem, 45rem;
   position: relative;
   width: 100vw;

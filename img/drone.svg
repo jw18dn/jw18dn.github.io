@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="26.735161mm"
-   height="10.92513mm"
-   viewBox="0 0 26.735161 10.92513"
+   width="11.604073mm"
+   height="5.6710696mm"
+   viewBox="0 0 11.604073 5.6710697"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
@@ -24,14 +24,14 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="5.1241863"
-     inkscape:cx="24.784423"
-     inkscape:cy="73.084774"
+     inkscape:cx="-32.395387"
+     inkscape:cy="65.864116"
      inkscape:window-width="2490"
      inkscape:window-height="1536"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g17" />
   <defs
      id="defs2">
     <clipPath
@@ -231,7 +231,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-166.0074,-18.544706)">
+     transform="translate(-181.13849,-20.443226)">
     <g
        id="g15"
        inkscape:label="fig1b-concept-v2"
@@ -300,18 +300,6 @@
             </g>
           </g>
         </g>
-        <g
-           id="g317-3"
-           transform="matrix(-0.97176545,0.50546715,-0.50546715,-0.97176545,477.14113,-5.6139712)">
-          <path
-             d="m 64.425,-20.03 -4.487,-1.65 4.488,-1.651 c -0.716,0.976 -0.711,2.306 -0.001,3.301 z"
-             style="fill:#8fc7f3;fill-opacity:1;fill-rule:evenodd;stroke:#8fc7f3;stroke-width:0.256764;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             id="path319-6" />
-        </g>
-        <path
-           style="fill:none;stroke:#8fc7f3;stroke-width:0.751181;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6.00945, 3.00472;stroke-dashoffset:0;stroke-opacity:1"
-           d="M 467.22712,60.918723 C 444.02377,75.396745 440.74057,76.50706 430.59396,76.15144 420.44734,75.79582 400.41138,60.133082 426.27277,47.591742"
-           id="path33792" />
       </g>
     </g>
   </g>
