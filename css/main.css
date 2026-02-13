@@ -254,8 +254,8 @@ body {
     -webkit-filter: invert(0);
             filter: invert(0);
   }
-  .container footer .social img {
-    height: 2.5rem;
+  .container footer .social a img {
+    height: 3.5rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
