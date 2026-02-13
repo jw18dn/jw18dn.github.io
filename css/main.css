@@ -246,7 +246,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0.2rem;
     left: 0;
     right: 0;
   }
