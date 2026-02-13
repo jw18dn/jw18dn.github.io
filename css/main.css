@@ -197,8 +197,8 @@ body {
 
 @media screen and (max-width: 820px) {
   .container {
-    padding: 2rem 2rem 8rem;
-    background-size: calc(15rem + 10vw), calc(8rem + 6vw);
+    padding: 2rem 2rem 25rem;
+    background-size: calc(7rem + 5vw), calc(8rem + 6vw);
   }
 
   .container header img {
