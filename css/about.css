@@ -64,9 +64,20 @@
   color: #3b3b3b;
 }
 
-/* Biography section */
-.about-bio {
+/* Biography section with image */
+.about-bio-with-image {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
   margin-bottom: 4rem;
+}
+
+.about-bio-text {
+  flex: 1;
+}
+
+.about-bio-text h2 {
+  margin-top: 0;
 }
 
 /* About hero with image on right */
@@ -102,6 +113,11 @@
   }
 
   .about-hero-reverse {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-bio-with-image {
     flex-direction: column;
     gap: 2rem;
   }
