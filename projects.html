@@ -27,88 +27,80 @@
       <main class="projects-content">
         <h1 data-aos="fade-up">Public Projects</h1>
 
-        <section class="projects-1" data-aos="fade-up">
+        <section class="project-section" data-aos="fade-up">
           <h2>Bipedal Force Control</h2>
-          <div class="projects-text">
-            <p>
-              This project develops a force-based double-support balancing controller that enables 
-              a bipedal robot to remain stable on uneven, compliant, and dynamically changing terrain 
-              using only minimal model information. The controller commands pelvis motion and ground 
-              reaction forces, which are converted into joint torques via a model-free PD controller, 
-              allowing the robot to balance robustly despite disturbances such as moving platforms, 
-              soft surfaces, and sudden drops. Experimental results demonstrate reliable balance 
-              performance on the Tallahassee Cassie platform, highlighting the potential for robust 
-              locomotion with reduced dependence on detailed robot dynamics models.
-            </p>
-          </div>
-          <div class="projects-video">
-            <video controls width="400">
+          <div class="projects-media">
+            <video controls>
               <source src="./vid/Force_Control.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
+          <p>
+            This project develops a force-based double-support balancing controller that enables
+            a bipedal robot to remain stable on uneven, compliant, and dynamically changing terrain
+            using only minimal model information. The controller commands pelvis motion and ground
+            reaction forces, which are converted into joint torques via a model-free PD controller,
+            allowing the robot to balance robustly despite disturbances such as moving platforms,
+            soft surfaces, and sudden drops. Experimental results demonstrate reliable balance
+            performance on the Tallahassee Cassie platform, highlighting the potential for robust
+            locomotion with reduced dependence on detailed robot dynamics models.
+          </p>
         </section>
 
-        <section class="projects-2" data-aos="fade-up">
+        <section class="project-section" data-aos="fade-up">
           <h2>Convex Obstacle Avoidance</h2>
-          <div class="projects-text">
-            <p>
-              This project presents a real-time motion planner that enables robots to avoid multiple 
-              moving obstacles without requiring knowledge of their dynamics or intentions. The 
-              planner uses convex model-predictive control with a half-space relaxation to maintain 
-              convexity while approximating obstacle distances, allowing fast and reliable trajectory 
-              generation. Iterative refinement and soft penalty formulations improve avoidance 
-              performance, enabling agile maneuvers in dynamic environments. The method is validated 
-              in simulation with legged locomotion and in hardware with quadcopter drones, demonstrating 
-              successful real-time avoidance of fast and unpredictable obstacles.            
-            </p>
-          </div>
-          <div class="projects-video">
-            <video controls width="400">
+          <div class="projects-media">
+            <video controls>
               <source src="./vid/Obstacle_Avoidance.m4v" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
+          <p>
+            This project presents a real-time motion planner that enables robots to avoid multiple
+            moving obstacles without requiring knowledge of their dynamics or intentions. The
+            planner uses convex model-predictive control with a half-space relaxation to maintain
+            convexity while approximating obstacle distances, allowing fast and reliable trajectory
+            generation. Iterative refinement and soft penalty formulations improve avoidance
+            performance, enabling agile maneuvers in dynamic environments. The method is validated
+            in simulation with legged locomotion and in hardware with quadcopter drones, demonstrating
+            successful real-time avoidance of fast and unpredictable obstacles.
+          </p>
         </section>
 
-        <section class="projects-3" data-aos="fade-up">
+        <section class="project-section" data-aos="fade-up">
           <h2>Through Contact Motion Planning</h2>
-          <div class="projects-text">
-            <p>
-              This project presents a convex model-predictive motion planner for legged robots that 
-              generates real-time behaviors without predefined contact sequences or gait timing. The 
-              planner iteratively updates both the robot trajectory and predicted ground contacts, 
-              enabling dynamic through-contact motion while maintaining fast convex optimization. 
-              Simulations show that the robot can naturally achieve stable hopping, transition between 
-              behaviors, and reject disturbances, with gait characteristics emerging from the robot 
-              dynamics rather than manual tuning. These results demonstrate efficient real-time locomotion 
-              planning with minimal reliance on predefined contact patterns.
-            </p>
-          </div>
-          <div class="projects-video">
-            <video controls width="400">
+          <div class="projects-media">
+            <video controls>
               <source src="./vid/Through_Contact.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
+          <p>
+            This project presents a convex model-predictive motion planner for legged robots that
+            generates real-time behaviors without predefined contact sequences or gait timing. The
+            planner iteratively updates both the robot trajectory and predicted ground contacts,
+            enabling dynamic through-contact motion while maintaining fast convex optimization.
+            Simulations show that the robot can naturally achieve stable hopping, transition between
+            behaviors, and reject disturbances, with gait characteristics emerging from the robot
+            dynamics rather than manual tuning. These results demonstrate efficient real-time locomotion
+            planning with minimal reliance on predefined contact patterns.
+          </p>
         </section>
 
-        <section class="projects-3" data-aos="fade-up">
+        <section class="project-section" data-aos="fade-up">
           <h2>Resistive Media Locomotion</h2>
-          <div class="projects-text">
-            <p>
-              This project develops a real-time gait optimization method that enables legged robots to 
-              run efficiently through fluid-like terrains such as sand and other resistive media. By 
-              using a reduced-order dynamic model and smooth optimal control formulation, the approach 
-              computes energy-efficient running gaits online with fast nonlinear optimization. 
-              Simulations and hardware experiments on a monopod robot demonstrate effective locomotion 
-              through granular substrates, validating the method's ability to generate efficient gaits 
-              in challenging, deformable environments.
-            </p>
-          </div>
-          <div class="projects-photo">
+          <div class="projects-media">
             <img src="./img/CousCousHopper.png" alt="xxx" />
           </div>
+          <p>
+            This project develops a real-time gait optimization method that enables legged robots to
+            run efficiently through fluid-like terrains such as sand and other resistive media. By
+            using a reduced-order dynamic model and smooth optimal control formulation, the approach
+            computes energy-efficient running gaits online with fast nonlinear optimization.
+            Simulations and hardware experiments on a monopod robot demonstrate effective locomotion
+            through granular substrates, validating the method's ability to generate efficient gaits
+            in challenging, deformable environments.
+          </p>
         </section>        
 
         <!-- <section class="projects-3" data-aos="fade-up">
