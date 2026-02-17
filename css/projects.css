@@ -36,9 +36,18 @@
 .projects-2,
 .projects-3 {
   display: flex;
-  gap: 4rem;
+  flex-wrap: wrap;
+  column-gap: 4rem;
+  row-gap: 0;
   align-items: flex-start;
   margin-bottom: 4rem;
+}
+
+.projects-1 > h2,
+.projects-2 > h2,
+.projects-3 > h2 {
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .projects-2,
@@ -59,6 +68,18 @@
 }
 
 .projects-video video {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+.projects-photo {
+  flex: 0 0 auto;
+}
+
+.projects-photo img {
   width: 100%;
   max-width: 400px;
   height: auto;
