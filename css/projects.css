@@ -52,6 +52,22 @@
   border-radius: 0.5rem;
 }
 
+/* Embedded video (YouTube): fixed 16:9 box inside the floated media column. */
+.projects-media .video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.projects-media .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0.5rem;
+}
+
 .projects-content p {
   font-size: 1.4rem;
   line-height: 1.8;

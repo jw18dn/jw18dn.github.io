@@ -30,6 +30,111 @@
           Below are a culmination of projects I was the lead developer on that can be spoken about publicly.
         </p>
         <section class="project-section" data-aos="fade-up">
+          <h2>Tendon-Driven Robotic Hand</h2>
+          <div class="projects-media">
+            <div class="video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/Nhr7ZnFZYkA"
+                title="Tendon-driven robotic hand hardware demonstration"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          <p>
+            This project took a tendon-driven hand from a single motor on a bench to all five fingers
+            and a wrist under coordinated control on hardware. Two overlapping tendon controllers were
+            consolidated into one optimization-based controller and one direct map, and the wrist's
+            closed kinematic chain was folded into the same solver so fingers and wrist are commanded
+            through a single interface. A persistent oscillation was traced to resonance near the
+            command rate, where the tendon and its termination behave as a spring, and was resolved by
+            changing the motor operating mode. Remaining tracking error was tied to solver weighting
+            rather than the formulation itself, and command-path lag was cut four-fold by widening the
+            setpoint filter and handing the position loop to the drives. A separate analysis proved
+            that the diagonal tendon routing loses control authority on the ring and pinky, reframing
+            what had been read as a tuning problem as a structural limit of the routing.
+          </p>
+        </section>
+
+        <section class="project-section" data-aos="fade-up">
+          <h2>Sensorless Hand State Estimation</h2>
+          <p>
+            The hand carries no joint sensors, so its only knowledge of its own pose comes from an
+            estimator that maps measured motor positions to joint angles. An iterative solve that
+            diverged under load was replaced with a direct inverse map, and a tendon-stretch correction
+            driven by measured tension was added and characterized on the real hand rather than assumed
+            from the model. Two errors that had quietly corrupted every prior result were root-caused:
+            the estimator double-counted wrist motion, and a slack tendon caused logs to report good
+            tracking on a finger that was visibly missing its commanded pose. Supporting this is a
+            calibration suite — a five-pose routine an operator walks through that serves as the single
+            source of truth for the motor-to-tendon map, two autonomous routines that find each joint's
+            travel limits with no operator present, and per-hand motor zeros with tendon tension recorded
+            at every capture pose so a calibration can be reproduced and scored against a
+            range-of-motion report.
+          </p>
+        </section>
+
+        <section class="project-section" data-aos="fade-up">
+          <h2>Real-Time Hardware Integration</h2>
+          <p>
+            This work built the real-time foundation the hand runs on. Three motor bus types were brought
+            up behind a single interface, with two driven simultaneously on the same hand, and the hand
+            was integrated onto a humanoid platform over one EtherCAT connection with a containerized
+            build and run path. The servo control rate was raised from 20 Hz to 250 Hz by tracking down a
+            USB latency default and a per-motor reply delay, and real-time scheduling with CPU pinning was
+            landed alongside a test proving the control tick performs no dynamic allocation. Drive
+            provisioning now writes the full parameter set to every motor and stores it persistently, so
+            limits survive a power cycle or a drive swap — the fix for a class of failures that included
+            calibration torque pinned low by a stale drive-side limit and an over-current threshold left
+            with no headroom for normal transients. Tendon force was standardized to newtons everywhere
+            above the drive layer, replacing three competing units and the silent conversions between
+            them, and an always-on recorder captures drive faults and dropped packets per motor so a
+            failure can be read back rather than scraped from console history.
+          </p>
+        </section>
+
+        <section class="project-section" data-aos="fade-up">
+          <h2>Hand Simulation and Tactile Sensing</h2>
+          <p>
+            Both hardware revisions of the hand were brought into simulation with correct tendon routing
+            and a shared scene, backed by a test that proves the two models stay in step as the hardware
+            evolves. A complete simulated tactile fingertip was built, modeling the path from contact on
+            the compliant pad through the readout electronics, so sensing behavior can be developed and
+            evaluated before the physical sensor is available. To keep the physics engine off the
+            real-time path, a static control map is generated offline and evaluated directly in the
+            control loop.
+          </p>
+        </section>
+
+        <section class="project-section" data-aos="fade-up">
+          <h2>Teleoperation and Operator Tooling</h2>
+          <p>
+            This project made the hand drivable and observable by anyone on the team. Motion-capture-glove
+            and webcam teleoperation were built on one shared retargeting layer, so either input can drive
+            the simulation or the physical hand without a separate pipeline. A browser control panel
+            launches every simulation and hardware run with live logs and an embedded 3D view, replacing
+            memorized command lines. Reporting turns each run into a readable result — power draw, current
+            dwell curves, and per-joint tracking tables — and the shared-memory pipeline feeding the robot
+            state visualizer was mapped and scripted for both simulation and hardware.
+          </p>
+        </section>
+
+        <section class="project-section" data-aos="fade-up">
+          <h2>Grasp Force Control and Humanoid Calibration</h2>
+          <p>
+            Alongside the tendon-driven hand, this work addressed grasp force and joint calibration on
+            other platforms. A commercially available anthropomorphic hand was characterized on a
+            purpose-built load-cell testbed, producing measured maximum finger output forces and a direct
+            two-hand comparison that became the evidence base for the fix: a force supervisor that stopped
+            grasp force from oscillating and gave each finger its own limit. On the humanoid, a
+            joint-zeroing routine was built with gravity compensation, probing in both directions, an
+            operator gate, and mirrored joint pairs probed together. A lever-arm transform was also derived
+            to correct measurements from a relocated inertial sensor back into the original sensor frame.
+          </p>
+        </section>
+
+        <section class="project-section" data-aos="fade-up">
           <h2>Blind Legged Locomotion Improvements</h2>
           <div class="projects-media">
             <video controls>
@@ -131,17 +236,6 @@
           </p>
         </section>        
 
-        <!-- <section class="projects-3" data-aos="fade-up">
-          <div class="projects-text">
-            <h2>Hand Control Simulation</h2>
-            <p>
-              Project description coming soon.
-            </p>
-          </div>
-          <div class="projects-photo">
-            <img src="./img/xxx.jpg" alt="xxx" />
-          </div>
-        </section>  -->       
       </main>
 
       <footer>
