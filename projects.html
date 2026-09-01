@@ -43,37 +43,47 @@
             </div>
           </div>
           <p>
-            This project took a tendon-driven hand from a single motor on a bench to all five fingers and
-            a wrist under coordinated control on hardware. Two overlapping tendon controllers were
-            consolidated into one optimization-based controller and one direct map, and the wrist's closed
-            kinematic chain was folded into the same solver so fingers and wrist are commanded through a
-            single interface. A persistent oscillation was traced to resonance near the command rate, where
-            the tendon and its termination behave as a spring, and resolved by changing the motor operating
-            mode. Command-path lag was cut four-fold by widening the setpoint filter and handing the
-            position loop to the drives, and analysis of the diagonal tendon routing proved it loses
-            control authority on the ring and pinky — reframing as a structural limit what had been read
-            as a tuning problem.
+            This project took a tendon-driven hand from a single motor on a bench to all five fingers
+            and a wrist under coordinated control on hardware, with ownership spanning drive-level
+            firmware integration through high-level application architecture. Overlapping control
+            implementations were consolidated into two — one blending kinematic control with dynamic
+            characterization, and one optimization-based — and the wrist was folded into the same
+            command path so fingers and wrist are driven through a single interface. A long-standing
+            oscillation that had blocked hardware progress for weeks was diagnosed and resolved, and a
+            separate analysis established a structural limit of one control approach, distinguishing it
+            from what had been read as a tuning problem.
           </p>
           <p>
-            With no joint sensors on the hand, an estimator was built to map measured motor positions to
-            joint angles. A diverging iterative solve was replaced with a direct inverse map, and a
-            tendon-stretch correction driven by measured tension was characterized on the real hand rather
-            than assumed from the model. Two errors that had corrupted every prior result were
-            root-caused: the estimator double-counted wrist motion, and a slack tendon caused logs to
-            report good tracking on a finger visibly missing its commanded pose. Calibration was made
-            reproducible with a five-pose operator routine that serves as the single source of truth for
-            the motor-to-tendon map, two autonomous routines that find each joint's travel limits
-            unattended, and per-hand motor zeros scored against a range-of-motion report.
+            At the low level, several motor bus types were brought up behind one hardware abstraction
+            layer, with drive provisioning that persists a full parameter set across power cycles and
+            drive swaps, protective behavior for fault conditions the drive firmware does not enforce
+            on its own, and always-on recording of faults and dropped packets so failures can be read
+            back rather than reconstructed. On the real-time side, the control loop was moved onto
+            real-time scheduling with tick-loss accounting and bounded fault recovery, the control tick
+            was audited and proven to allocate no memory, command-path latency was cut substantially,
+            control rate rose by more than an order of magnitude, and the physics engine was taken off
+            the real-time path entirely.
           </p>
           <p>
-            Both hardware revisions were brought into simulation with correct tendon routing and a shared
-            scene, backed by a test proving the two stay in step, and a complete tactile fingertip was
-            modeled from contact on the compliant pad through the readout electronics. A static control map
-            generated offline keeps the physics engine off the real-time path. Motion-capture-glove and
-            webcam teleoperation were built on one shared retargeting layer that drives either the
-            simulation or the physical hand, and a browser control panel launches every run with live logs,
-            an embedded 3D view, and reporting that turns power, current dwell, and per-joint tracking into
-            a readable result.
+            Because the hand carries no joint sensors, an estimator was built to recover joint angles
+            from motor measurements, replacing an earlier approach that diverged under load and adding
+            a compliance compensation characterized on the real hand rather than assumed from the
+            model. Two errors that had quietly invalidated every prior result were root-caused and
+            corrected. Calibration was made reproducible through an operator-guided routine that serves
+            as the single source of truth, autonomous routines that map each joint's travel limits with
+            no operator present, and per-hand records scored against a range-of-motion report.
+          </p>
+          <p>
+            Both hardware revisions were modeled in simulation with a test proving the two stay in step,
+            and a full sensing pipeline was built and validated ahead of the physical hardware it
+            targets. Two teleoperation input modalities share a single retargeting layer that drives
+            either the simulation or the real hand, and a browser control panel launches every run with
+            live logs, an embedded 3D view, and reporting that turns a run into a readable result. At
+            the architecture level, the work included putting the repository on continuous integration
+            across both build configurations and both language suites, eliminating duplicate sources of
+            truth in the hardware abstraction layer, and authoring the staged plans — reviewed and
+            revised against merged work — that let the plant, controller, command source and motor bus
+            vary independently.
           </p>
         </section>
 
