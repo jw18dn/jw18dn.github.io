@@ -53,10 +53,10 @@ body {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: url("../img/drone.svg"), url("../img/Cassie.svg"), url("../img/vision60_2.svg");
+  background: url("../img/drone.svg"), url("../img/Cassie.svg"), url("../img/vision60_2.svg"), url("../img/skywalker_2.2_palmar.svg");
   background-repeat: no-repeat;
-  background-position: top 8rem right 4vw, bottom 2rem left 2vw, bottom 2rem right 2vw;
-  background-size: clamp(9rem, 16vw, 25rem), clamp(11rem, 22vw, 35rem), clamp(13rem, 28vw, 45rem);
+  background-position: top 8rem right 4vw, bottom 2rem left 2vw, bottom 2rem right 2vw, top 2rem left 2vw;
+  background-size: clamp(9rem, 16vw, 25rem), clamp(11rem, 22vw, 35rem), clamp(13rem, 28vw, 45rem), auto clamp(11rem, 24vw, 34rem);
 }
 
 /* On text-heavy pages the robots become a light backdrop so body text stays
@@ -65,24 +65,6 @@ body {
 .projects-container::before,
 .pub-container::before {
   opacity: 0.15;
-}
-
-.container header {
-  width: 100%;
-  height: 6rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.container header img {
-  height: 6rem;
 }
 
 .container .content {
@@ -234,13 +216,10 @@ body {
 
   /* Phones: shrink the robots and lift them clear of the footer. */
   .container::before {
-    background-position: top 2rem right 2rem, bottom 6.5rem left 1rem, bottom 6.5rem right 1rem;
-    background-size: clamp(7rem, 22vw, 12rem), clamp(9rem, 30vw, 16rem), clamp(11rem, 36vw, 20rem);
+    background-position: top 2rem right 2rem, bottom 6.5rem left 1rem, bottom 6.5rem right 1rem, top 1rem left 1rem;
+    background-size: clamp(7rem, 22vw, 12rem), clamp(9rem, 30vw, 16rem), clamp(11rem, 36vw, 20rem), auto clamp(8rem, 26vw, 13rem);
   }
 
-  .container header img {
-    height: 5rem;
-  }
   .container .content {
     padding-bottom: 10rem;
   }
