@@ -197,7 +197,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  width: 400px;
+  width: 510px;
+  max-width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -284,7 +285,7 @@ body {
   .container footer .social {
     -webkit-filter: invert(0);
             filter: invert(0);
-    width: 220px;
+    width: 275px;
   }
   .container footer .social a img {
     height: 3.5rem;
