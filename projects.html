@@ -39,45 +39,48 @@
             </div>
           </div>
           <p>
-            As the only dedicated software/controls engineer on this project, my work 
-            took a tendon-driven hand from a single dynamixel motor on a bench to a full  20 degree 
-            of freedom wrist and hand that leveraged custom actuators, sensors, and pcbs.
-            Performed extensive hardware testing to develop coordinated control with ownership spanning 
-            drive-level firmware integration through high-level application architecture. Leveraged 
-            multiple control implementations blending kinematic control with dynamic
-            characterization, another optimization-based and a final RL-based approach.
+            As the only dedicated software and controls engineer on this project, I took a
+            tendon-driven hand from a single Dynamixel motor on a bench to a wrist and hand with 20
+            degrees of freedom, built around custom actuators, sensors, and PCBs. Ownership spanned
+            the full stack, from drive-level firmware integration up through the high-level
+            application architecture.
           </p>
           <p>
-            At the low level, several motor bus types were brought up behind one hardware abstraction
-            layer, with drive provisioning that persists a full parameter set across power cycles and
-            drive swaps, protective behavior for fault conditions the drive firmware does not enforce
-            on its own, and always-on recording of faults and dropped packets so failures can be read
-            back rather than reconstructed. On the real-time side, the control loop was moved onto
-            real-time scheduling with tick-loss accounting and bounded fault recovery, the control tick
-            was audited and proven to allocate no memory, command-path latency was cut substantially,
-            control rate rose by more than an order of magnitude, and the physics engine was taken off
-            the real-time path entirely.
+            Bringing up the hardware came first. Several motor bus types were consolidated behind a
+            single hardware abstraction layer, with drive provisioning that persists across power
+            cycles and drive swaps, and with protective behavior for the fault conditions that the
+            drive firmware does not enforce on its own. Diagnostics and safety controllers run on
+            real-time scheduling with tick-loss accounting and bounded fault recovery. Logging
+            captures EtherCAT drops, drive faults, and control loop timing from one source of truth
+            shared across hardware deployments, and writes out in continuous chunks so nothing is
+            lost if a run crashes, which means failures can be read back rather than reconstructed.
+            The control loop is capable of 1 kHz and currently runs at 100 Hz, limited by the single
+            CAN bus.
           </p>
           <p>
             Because the hand carries no joint sensors, an estimator was built to recover joint angles
-            from motor measurements, replacing an earlier approach that diverged under load and adding
-            a compliance compensation characterized on the real hand rather than assumed from the
-            model. Two errors that had quietly invalidated every prior result were root-caused and
-            corrected. Calibration was made reproducible through an operator-guided routine that serves
-            as the single source of truth, autonomous routines that map each joint's travel limits with
-            no operator present, and per-hand records scored against a range-of-motion report.
+            from motor measurements and compliance characterization results. Position is
+            also lost across power cycles, so an operator-guided calibration routine with safeguards
+            was added to ensure the hand is calibrated before operation. That routine was later made
+            autonomous and extended to characterize tendon stretch as well.
           </p>
           <p>
-            Both hardware revisions were modeled in simulation with a test proving the two stay in step,
-            and a full sensing pipeline was built and validated ahead of the physical hardware it
-            targets. Two teleoperation input modalities share a single retargeting layer that drives
-            either the simulation or the real hand, and a browser control panel launches every run with
-            live logs, an embedded 3D view, and reporting that turns a run into a readable result. At
-            the architecture level, the work included putting the repository on continuous integration
-            across both build configurations and both language suites, eliminating duplicate sources of
-            truth in the hardware abstraction layer, and authoring the staged plans — reviewed and
-            revised against merged work — that let the plant, controller, command source and motor bus
-            vary independently.
+            Control matured alongside the hardware. The large sim-to-real gap and the absence of
+            external sensing ruled out dynamics-based methods, so coordinated control was developed
+            through extensive hardware testing across three successive implementations: kinematic
+            control informed by dynamic characterization, then an optimization-based approach, and
+            finally a reinforcement learning based one.
+          </p>
+          <p>
+            Around the controller, both hardware revisions were modeled in simulation with a test
+            proving the two stay in step, and a full sensing pipeline was built and validated ahead
+            of the physical hardware it targets. Two teleoperation input modalities share a single
+            retargeting layer that drives either the simulation or the real hand, and a browser
+            control panel launches every run with live logs, an embedded 3D view, and reporting that
+            turns a run into a readable result. At the architecture level, the repository was put on
+            continuous integration across both build configurations. Duplicate definitions were 
+            eliminated from the hardware abstraction layer, let the plant, controller, command
+            source and motor bus vary independently.
           </p>
         </section>
 
