@@ -40,15 +40,15 @@
           </div>
           <p>
             As the only dedicated software and controls engineer on this project, I took a
-            tendon-driven hand from a single Dynamixel motor on a bench to a wrist and hand with 20
+            tendon-driven hand from a single Dynamixel motor on a bench to a wrist and hand with 22
             degrees of freedom, built around custom actuators, sensors, and PCBs. Ownership spanned
             the full stack, from drive-level firmware integration up through the high-level
             application architecture.
           </p>
           <p>
-            Bringing up the hardware came first. Several motor bus types were consolidated behind a
+            Several motor bus types were consolidated behind a
             single hardware abstraction layer, with drive provisioning that persists across power
-            cycles and drive swaps, and with protective behavior for the fault conditions that the
+            cycles and protective behaviors for fault conditions that the
             drive firmware does not enforce on its own. Diagnostics and safety controllers run on
             real-time scheduling with tick-loss accounting and bounded fault recovery. Logging
             captures EtherCAT drops, drive faults, and control loop timing from one source of truth
